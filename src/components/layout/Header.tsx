@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from '../../contexts/ThemeContext';
 import MobileMenu from './MobileMenu';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 interface MenuItem {
   path: string;
@@ -89,12 +90,12 @@ const Header: React.FC = (): JSX.Element => {
               <button
                 onClick={toggleTheme}
                 className={`p-2 focus:outline-none ${
-                  isScrolled || !isHomePage
+                  isScrolled || location.pathname !== '/'
                     ? (theme === 'light' ? 'text-secondary-light' : 'text-secondary-dark')
                     : 'text-white'
                 } hover:text-accent-light dark:hover:text-accent-dark`}
               >
-                {theme === 'light' ? '🌙' : '☀️'}
+                <FontAwesomeIcon icon={theme === 'light' ? 'moon' : 'sun'} />
               </button>
               <button
                 onClick={toggleMobileMenu}
