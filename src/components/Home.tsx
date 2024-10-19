@@ -19,9 +19,7 @@ const Home: React.FC = () => {
             </h1>
             <div className="flex flex-wrap justify-center space-x-4 sm:space-x-6 text-accent-light dark:text-accent-dark text-lg sm:text-xl md:text-2xl lg:text-3xl shadow-text">
               <span className="mb-2">КОНСУЛЬТАЦИЯ</span>
-              <span className="mb-2">ЛИЦЕНЗИЯ</span>
-              <span className="mb-2">РЕГИСТРАЦИЯ</span>
-              <span className="mb-2">ПРАКТИКИ</span>
+              <span className="mb-2">ЮР. СОПРОВОЖДЕНИЕ</span>
             </div>
           </div>
         </div>
