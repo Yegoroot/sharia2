@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4 pt-8"> {/* Добавлен pt-8 для верхнего отступа */}
         <div className="flex flex-wrap justify-between">
           <div className="w-full md:w-1/3 mb-6 md:mb-0">
-            <h3 className="text-xl font-bold mb-2">Салман АбуДауд</h3>
+            <h3 className="text-xl font-bold mb-2">Шариатские консультации</h3>
             <p className="text-sm">Юридические услуги высшего качества</p>
           </div>
           <div className="w-full md:w-1/3 mb-6 md:mb-0">

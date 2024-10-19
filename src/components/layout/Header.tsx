@@ -70,10 +70,10 @@ const Header: React.FC = (): JSX.Element => {
               <div className="flex items-center">
                 <Link to="/" className="text-2xl font-bold">
                   <span className={`transition-colors duration-300 ${getTextColorClass()}`}>
-                    Салман
+                    Шариатские
                   </span>{' '}
                   <span className="bg-accent-light dark:bg-accent-dark text-primary-light dark:text-primary-dark px-1">
-                    АбуДауд
+                    консультации
                   </span>
                 </Link>
               </div>
