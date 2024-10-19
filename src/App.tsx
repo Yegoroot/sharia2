@@ -6,17 +6,21 @@ import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
 import Services from './components/Services';
-import { ThemeProvider } from './contexts/ThemeContext';
+import { ThemeProvider, useTheme } from './contexts/ThemeContext';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 
 library.add(fas);
 
 const MainContent: React.FC = () => {
-
+  const { theme } = useTheme();
 
   return (
-    <main className={'flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-16'}>
+    <main className={`flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-16 mt-16 ${
+      theme === 'dark' 
+        ? 'bg-gray-900 text-gray-300'
+        : 'bg-white text-black'
+    }`}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -28,19 +32,29 @@ const MainContent: React.FC = () => {
 };
 
 const App: React.FC = () => {
+  const { theme } = useTheme();
+
+  return (
+    <Router>
+      <div className={`flex flex-col min-h-screen ${
+        theme === 'dark' 
+          ? 'bg-gray-900 text-gray-300'
+          : 'bg-white text-black'
+      }`}>
+        <Header />
+        <MainContent />
+        <Footer />
+      </div>
+    </Router>
+  );
+};
+
+const AppWrapper: React.FC = () => {
   return (
     <ThemeProvider>
-      <Router>
-        <div className="flex flex-col min-h-screen">
-          <Header />
-          <main className="flex-grow pt-16">
-            <MainContent />
-          </main>
-          <Footer />
-        </div>
-      </Router>
+      <App />
     </ThemeProvider>
   );
 };
 
-export default App;
+export default AppWrapper;

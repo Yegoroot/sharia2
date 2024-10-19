@@ -44,7 +44,7 @@ const Header: React.FC = (): JSX.Element => {
 
   const getTextColorClass = () => {
     if (isScrolled || !isHomePage) {
-      return theme === 'light' || (!isScrolled && !isHomePage)
+      return theme === 'light'
         ? 'text-secondary-light'
         : 'text-secondary-dark';
     }
