@@ -1,17 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+interface MenuItem {
+  path: string;
+  label: string;
+}
+
 interface MobileMenuProps {
   isOpen: boolean;
   toggleMenu: () => void;
   isActive: (path: string) => boolean;
+  menuItems: MenuItem[];
 }
 
-const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, toggleMenu, isActive }): JSX.Element => {
+const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, toggleMenu, isActive, menuItems }): JSX.Element | null => {
+  if (!isOpen) return null;
+
   return (
     <div 
-      className={`fixed inset-0 bg-gray-800 bg-opacity-95 z-50 flex items-center justify-center
-      transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+      className="fixed inset-0 bg-gray-800 bg-opacity-95 z-50 flex items-center justify-center
+      transition-opacity duration-300"
     >
       <button
         onClick={toggleMenu}
@@ -23,39 +31,20 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, toggleMenu, isActive })
         </svg>
       </button>
       <div className="text-center">
-        <Link
-          to="/"
-          className={`block px-3 py-2 text-2xl font-medium mb-4 ${
-            isActive('/') 
-              ? 'text-white border-b-2 border-white' 
-              : 'text-gray-300 hover:text-white'
-          }`}
-          onClick={toggleMenu}
-        >
-          Главная
-        </Link>
-        <Link
-          to="/about"
-          className={`block px-3 py-2 text-2xl font-medium mb-4 ${
-            isActive('/about') 
-              ? 'text-white border-b-2 border-white' 
-              : 'text-gray-300 hover:text-white'
-          }`}
-          onClick={toggleMenu}
-        >
-          О нас
-        </Link>
-        <Link
-          to="/contact"
-          className={`block px-3 py-2 text-2xl font-medium mb-4 ${
-            isActive('/contact') 
-              ? 'text-white border-b-2 border-white' 
-              : 'text-gray-300 hover:text-white'
-          }`}
-          onClick={toggleMenu}
-        >
-          Контакты
-        </Link>
+        {menuItems.map((item) => (
+          <Link
+            key={item.path}
+            to={item.path}
+            className={`block px-3 py-2 text-2xl font-medium mb-4 ${
+              isActive(item.path) 
+                ? 'text-white border-b-2 border-white' 
+                : 'text-gray-300 hover:text-white'
+            }`}
+            onClick={toggleMenu}
+          >
+            {item.label}
+          </Link>
+        ))}
       </div>
     </div>
   );
