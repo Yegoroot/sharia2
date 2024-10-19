@@ -51,14 +51,19 @@ const Header: React.FC = (): JSX.Element => {
     return 'text-white';
   };
 
+  const getHeaderBackgroundClass = () => {
+    if (isScrolled) {
+      return theme === 'light' ? 'bg-primary-light' : 'bg-gray-900';
+    }
+    return 'bg-transparent';
+  };
+
   return (
     <>
       <header className="bg-primary text-white py-4 shadow-md fixed top-0 left-0 right-0 z-50">
         <nav className={`fixed top-0 left-0 right-0 z-10 transition-all duration-300 
-          ${isScrolled 
-      ? 'bg-primary-light dark:bg-primary-dark shadow-lg' 
-      : 'bg-transparent'
-    }`}
+          ${getHeaderBackgroundClass()} 
+          ${isScrolled ? 'shadow-lg' : ''}`}
         >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-16">
