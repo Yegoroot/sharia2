@@ -11,8 +11,8 @@ interface MenuItem {
 
 const menuItems: MenuItem[] = [
   { path: '/', label: 'Главная' },
-  { path: '/about', label: 'О нас' },
-  { path: '/services', label: 'Услуги' },
+  { path: '/about', label: 'Обо мне' },
+  { path: '/services', label: 'Консультация' },
   { path: '/contact', label: 'Контакты' },
 ];
 

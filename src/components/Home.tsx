@@ -1,12 +1,13 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBalanceScale, faFileContract, faBuilding, faGavel } from '@fortawesome/free-solid-svg-icons';
+import { faBalanceScale, faHandshake, faFileContract, faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const Home: React.FC = () => {
-  const activities = [
-    { icon: faBalanceScale, title: 'КОНСУЛЬТАЦИЯ', description: 'Юридическая консультация помогает нам воплощать в жизнь миссию нашей компании - делать решение любых юридических вопросов простым, безопасным и эффективным.' },
-    { icon: faFileContract, title: 'ЛИЦЕНЗИЯ', description: 'Наша фирма предлагает услуги по лицензированию деятельности самых разных направлений.' },
-    { icon: faBuilding, title: 'РЕГИСТРАЦИЯ', description: 'Помощь с регистрацией ООО, ФЛП или проведением любых регистрационных действий.' },
+  const consultations = [
+    { icon: faBalanceScale, description: 'Консультации по исламскому праву' },
+    { icon: faHandshake, description: 'Разрешение семейных споров' },
+    { icon: faFileContract, description: 'Помощь в составлении исламских контрактов' },
+    { icon: faSearch, description: 'Исследования в области исламского права' },
   ];
 
   return (
@@ -23,27 +24,26 @@ const Home: React.FC = () => {
         <div className="flex-grow flex items-center justify-center bg-transparent md:bg-black md:bg-opacity-30 px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
           <div className="text-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 shadow-text leading-tight">
-              ЮРИДИЧЕСКИЕ УСЛУГИ
+              ШАРИАТСКИЕ КОНСУЛЬТАЦИИ
             </h1>
             <div className="flex flex-wrap justify-center space-x-4 sm:space-x-6 text-accent-light dark:text-accent-dark text-lg sm:text-xl md:text-2xl lg:text-3xl shadow-text">
-              <span className="mb-2">КОНСУЛЬТАЦИЯ</span>
-              <span className="mb-2">ЮР. СОПРОВОЖДЕНИЕ</span>
+              <span className="mb-2">шариатское,</span>
+              <span className="mb-2">юридическое сопровождение</span>
             </div>
           </div>
         </div>
 
-        {/* Our services section */}
+        {/* Consultations section */}
         <div className="bg-white dark:bg-gray-800 text-secondary-light dark:text-secondary-dark py-12 sm:py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12">НАША ДЕЯТЕЛЬНОСТЬ</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {activities.map((activity, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-accent-light dark:text-accent-dark text-3xl sm:text-4xl mb-4">
-                    <FontAwesomeIcon icon={activity.icon} />
+            <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12">КОНСУЛЬТАЦИИ</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {consultations.map((consultation, index) => (
+                <div key={index} className="flex items-center">
+                  <div className="text-accent-light dark:text-accent-dark text-3xl sm:text-4xl mr-4">
+                    <FontAwesomeIcon icon={consultation.icon} />
                   </div>
-                  <h3 className="text-lg sm:text-xl font-bold mb-2">{activity.title}</h3>
-                  <p className="text-sm sm:text-base text-secondary-light dark:text-secondary-dark">{activity.description}</p>
+                  <p className="text-sm sm:text-base text-secondary-light dark:text-secondary-dark">{consultation.description}</p>
                 </div>
               ))}
             </div>
