@@ -37,10 +37,10 @@ const Home: React.FC = () => {
         <div className="bg-white dark:bg-gray-800 text-secondary-light dark:text-secondary-dark py-12 sm:py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12">КОНСУЛЬТАЦИИ</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {consultations.map((consultation, index) => (
-                <div key={index} className="flex items-center">
-                  <div className="text-accent-light dark:text-accent-dark text-3xl sm:text-4xl mr-4">
+                <div key={index} className="flex flex-col items-center text-center">
+                  <div className="text-accent-light dark:text-accent-dark text-4xl sm:text-5xl mb-4">
                     <FontAwesomeIcon icon={consultation.icon} />
                   </div>
                   <p className="text-sm sm:text-base text-secondary-light dark:text-secondary-dark">{consultation.description}</p>
