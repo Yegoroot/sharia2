@@ -1,13 +1,12 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBalanceScale, faHandshake, faFileContract, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faBalanceScale, faFileContract, faHandshake } from '@fortawesome/free-solid-svg-icons';
 
 const Home: React.FC = () => {
   const consultations = [
-    { icon: faBalanceScale, description: 'Консультации по исламскому праву' },
-    { icon: faHandshake, description: 'Разрешение семейных споров' },
-    { icon: faFileContract, description: 'Помощь в составлении исламских контрактов' },
-    { icon: faSearch, description: 'Исследования в области исламского права' },
+    { icon: faBalanceScale, description: 'Консультации по исламскому гражданскому праву' },
+    { icon: faFileContract, description: 'Составление договоров' },
+    { icon: faHandshake, description: 'Урегулирование споров в гражданском праве' },
   ];
 
   return (
@@ -37,7 +36,7 @@ const Home: React.FC = () => {
         <div className="bg-white dark:bg-gray-800 text-secondary-light dark:text-secondary-dark py-12 sm:py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12">КОНСУЛЬТАЦИИ</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {consultations.map((consultation, index) => (
                 <div key={index} className="flex flex-col items-center text-center">
                   <div className="text-accent-light dark:text-accent-dark text-4xl sm:text-5xl mb-4">
