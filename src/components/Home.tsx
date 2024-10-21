@@ -21,12 +21,12 @@ const Home: React.FC = () => {
       {/* Content */}
       <div className="relative z-10 flex flex-col">
         {/* Hero section */}
-        <div className="flex-grow flex items-center justify-center bg-transparent md:bg-black md:bg-opacity-30 px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
+        <div className="flex-grow flex items-center justify-center bg-transparent md:bg-black md:bg-opacity-30 px-4 sm:px-6 lg:px-8 pt-4 pb-8 sm:py-16 md:py-32">
           <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 shadow-text leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 shadow-text leading-tight">
               ШАРИАТСКИЕ КОНСУЛЬТАЦИИ
             </h1>
-            <div className="flex flex-wrap justify-center space-x-4 sm:space-x-6 text-accent-light dark:text-accent-dark text-lg sm:text-xl md:text-2xl lg:text-3xl shadow-text">
+            <div className="flex flex-wrap justify-center space-x-2 sm:space-x-4 text-accent-light dark:text-accent-dark text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl shadow-text">
               <span className="mb-2">шариатское,</span>
               <span className="mb-2">юридическое сопровождение</span>
             </div>
